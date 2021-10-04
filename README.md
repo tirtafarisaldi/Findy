@@ -2,11 +2,13 @@
 
 A repository for Kumparan frontend technical assessment, built with:
 
-React as a frontend view library
-Redux as state management
-Redux Thunk to return dispatch function from action creators
-React Bootstrap as UI Kit
-Webpack as a module bundler
+- React as a frontend view library
+- Redux as state management
+- Redux Thunk to return dispatch function from action creators
+- React Bootstrap as UI Kit
+- Webpack as a module bundler
+- React Router 
+
 
 # How To Run
 
@@ -15,14 +17,16 @@ so it requires 2 cmd. The first cmd is used to start the database and the second
 
 cmd for database
 ```
-1. `npm install -g json-server`
-2. `git clone` this repository and `cd` to the new your repository
-3. `json-server --watch db.json`
+1. npm install -g json-server
+2. git clone https://github.com/farisaldi/Kumparan-Technical-Test.git and cd to the new your repository
+3. json-server --watch db.json 
 ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result of database
 
 cmd for apllication
 ```
-1. `cd` to the new your repository
+1. cd to the new your repository
 2. npm install
 3. yarn start
 ```
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result of application
