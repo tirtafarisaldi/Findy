@@ -7,7 +7,7 @@ A repository for Kumparan frontend technical assessment, built with:
 - Redux Thunk to return dispatch function from action creators
 - React Bootstrap as UI Kit
 - Webpack as a module bundler
-- React Router 
+- React Router Dom
 
 
 # How To Run
