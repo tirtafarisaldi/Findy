@@ -8,6 +8,7 @@ const CommentsPage = () => {
     return (
         <div style={{ padding: "30px" }}>
             <CommentsList />
+            <br />
             <FormComment />
         </div>
     )

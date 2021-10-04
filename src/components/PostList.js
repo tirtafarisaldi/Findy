@@ -5,6 +5,7 @@ import { GetPostsList } from '../redux/actions/GetPostsList';
 import { DeletePost } from '../redux/actions/DeletePost';
 import { DetailPost } from '../redux/actions/DetailPost';
 import { Link, useParams } from 'react-router-dom'
+import { ListGroup, Button } from 'react-bootstrap'
 
 function PostList() {
     const { GetPostsListResult, GetPostsListLoading, GetPostsListError } = useSelector((state) => state.Post)
@@ -17,24 +18,26 @@ function PostList() {
     }, [dispatch])
 
     return (
-        <div>
-            <h1>{GetUsersListResult[params.userid - 1]?.name}</h1>
+        <ListGroup>
+            <h1>{GetUsersListResult[params.userid - 1]?.name}'s Posts</h1>
             <hr />
             {GetPostsListResult ? (
                 GetPostsListResult.map(post => {
                     return (
-                        <div key={post.id}>
+                        <ListGroup.Item key={post.id}>
                             <p>{post.title}</p>
-                            <Link to={`/CommentsList/${params.userid}/${post.id}`} className="ui blue inverted button">View Detail</Link>
-                            <button type="button" onClick={() => dispatch(DetailPost(post))}>Edit</button>
-                            <button type="button" onClick={() => {
+                            <Link to={`/CommentsList/${params.userid}/${post.id}`} >
+                                <Button variant="outline-primary">View Detail</Button>
+                            </Link>{' '}
+                            <Button variant="outline-success" type="button" onClick={() => dispatch(DetailPost(post))}>Edit</Button>{' '}
+                            <Button variant="outline-danger" type="button" onClick={() => {
                                 window.location.reload(true)
                                 return (
                                     dispatch(DeletePost(post.id))
                                 )
-                            }}>Delete</button>
+                            }}>Delete</Button>
                             <hr />
-                        </div>
+                        </ListGroup.Item>
 
                     )
                 })
@@ -43,7 +46,7 @@ function PostList() {
             ) : (
                 <p>{GetPostsListError ? GetPostsListError : "Data Kosong"}</p>
             )}
-        </div>
+        </ListGroup>
     )
 }
 

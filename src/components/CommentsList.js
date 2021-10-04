@@ -5,6 +5,7 @@ import { GetCommentsList } from '../redux/actions/GetCommentsList';
 import { DeleteComment } from '../redux/actions/DeleteComment';
 import { DetailComment } from '../redux/actions/DetailComment';
 import { Link, useParams } from 'react-router-dom'
+import { ListGroup, Button } from 'react-bootstrap'
 
 function CommentsList() {
     const { GetCommentsListResult, GetCommentsListLoading, GetCommentsListError } = useSelector((state) => state.Comment)
@@ -20,26 +21,29 @@ function CommentsList() {
     console.log(GetPostsListResult)
 
     return (
-        <div>
+        <ListGroup>
             <h1>{GetPostsListResult[params.postid - 1]?.title}</h1>
             <p>{GetPostsListResult[params.postid - 1]?.body}</p>
             <hr />
             {GetCommentsListResult ? (
                 GetCommentsListResult.map(comment => {
                     return (
-                        <div key={comment.id}>
+                        <ListGroup.Item key={comment.id}>
+                            <h6>{comment.name}</h6>
+                            <br />
+                            <p class="blockquote-footer">{comment.email}</p>
                             <p>{comment.body}</p>
-                            <button type="button" onClick={() => dispatch(DetailComment(comment))}>Edit</button>
-                            <button type="button" onClick={() => {
+                            <Button variant="outline-primary" type="button" onClick={() => dispatch(DetailComment(comment))}>Edit</Button>{" "}
+                            <Button variant="outline-success" type="button" onClick={() => {
                                 window.location.reload(true)
                                 return (
                                     dispatch(DeleteComment(comment.id))
                                 )
-                            }}>Delete</button>
+                            }}>Delete</Button>
                             {/* <Link to={`/Post/${user.id}`} className="ui blue inverted button">View Posts User</Link>
                             <Link to={`/Album/${user.id}`} className="ui violet inverted button">View Albums User</Link> */}
                             <hr />
-                        </div>
+                        </ListGroup.Item>
 
                     )
                 })
@@ -48,7 +52,7 @@ function CommentsList() {
             ) : (
                 <p>{GetCommentsListError ? GetCommentsListError : "Data Kosong"}</p>
             )}
-        </div>
+        </ListGroup>
     )
 }
 

@@ -6,8 +6,9 @@ const PostPage = () => {
     return (
         <div>
             <div style={{ padding: "30px" }}>
-                <FormPost />
                 <PostList />
+                <br />
+                <FormPost />
             </div>
         </div>
     )
