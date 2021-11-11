@@ -29,7 +29,7 @@ const PostList = React.memo(() => {
     
     useEffect(()=>{
         for(let i = 0; i < GetUsersListResult.length; i++ ) {
-            if(GetUsersListResult[i]?.id == params.postid) {
+            if(GetUsersListResult[i]?.id == params.userid) {
                 setUserId(i)
             }
         }
