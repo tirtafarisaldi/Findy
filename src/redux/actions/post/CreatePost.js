@@ -1,11 +1,11 @@
 import axios from "axios";
-import { GET_ALBUMS_LIST } from './types'
+import { CREATE_POST } from '../types'
 
-export const GetAlbumsList = (userid) => {
+export const CreatePost = (userid, data) => {
     return (dispatch) => {
         //loading
         dispatch({
-            type: GET_ALBUMS_LIST,
+            type: CREATE_POST,
             payload: {
                 loading: true,
                 data: false,
@@ -15,13 +15,14 @@ export const GetAlbumsList = (userid) => {
 
         //get API
         axios({
-            method: 'GET',
-            url: `http://localhost:3000/albums?userId=${userid}`,
-            timeout: 120000
+            method: 'POST',
+            url: `http://localhost:3000/posts`,
+            timeout: 120000,
+            data: data
         })
             .then((response) => {
                 dispatch({
-                    type: GET_ALBUMS_LIST,
+                    type: CREATE_POST,
                     payload: {
                         loading: false,
                         data: response.data,
@@ -31,7 +32,7 @@ export const GetAlbumsList = (userid) => {
             })
             .catch((error) => {
                 dispatch({
-                    type: GET_ALBUMS_LIST,
+                    type: CREATE_POST,
                     payload: {
                         loading: false,
                         data: false,
@@ -39,5 +40,7 @@ export const GetAlbumsList = (userid) => {
                     }
                 })
             })
+
     }
+
 }

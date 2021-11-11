@@ -1,11 +1,11 @@
 import axios from "axios";
-import { DELETE_POST } from './types'
+import { GET_ALBUMS_LIST } from '../types'
 
-export const DeletePost = (id) => {
+export const GetAlbumsList = (userid) => {
     return (dispatch) => {
         //loading
         dispatch({
-            type: DELETE_POST,
+            type: GET_ALBUMS_LIST,
             payload: {
                 loading: true,
                 data: false,
@@ -15,13 +15,13 @@ export const DeletePost = (id) => {
 
         //get API
         axios({
-            method: 'DELETE',
-            url: `http://localhost:3000/posts/${id}`,
+            method: 'GET',
+            url: `http://localhost:3000/albums?userId=${userid}`,
             timeout: 120000
         })
             .then((response) => {
                 dispatch({
-                    type: DELETE_POST,
+                    type: GET_ALBUMS_LIST,
                     payload: {
                         loading: false,
                         data: response.data,
@@ -31,7 +31,7 @@ export const DeletePost = (id) => {
             })
             .catch((error) => {
                 dispatch({
-                    type: DELETE_POST,
+                    type: GET_ALBUMS_LIST,
                     payload: {
                         loading: false,
                         data: false,
@@ -39,7 +39,5 @@ export const DeletePost = (id) => {
                     }
                 })
             })
-
     }
-
 }

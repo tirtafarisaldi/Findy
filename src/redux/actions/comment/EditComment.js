@@ -1,5 +1,5 @@
 import axios from "axios";
-import { EDIT_COMMENT } from './types'
+import { EDIT_COMMENT } from '../types'
 
 export const EditComment = (data) => {
     return (dispatch) => {

@@ -1,11 +1,11 @@
 import axios from "axios";
-import { GET_PHOTOS_LIST } from './types'
+import { DELETE_POST } from '../types'
 
-export const GetPhotosList = (albumid) => {
+export const DeletePost = (id) => {
     return (dispatch) => {
         //loading
         dispatch({
-            type: GET_PHOTOS_LIST,
+            type: DELETE_POST,
             payload: {
                 loading: true,
                 data: false,
@@ -15,13 +15,13 @@ export const GetPhotosList = (albumid) => {
 
         //get API
         axios({
-            method: 'GET',
-            url: `http://localhost:3000/photos?albumId=${albumid}`,
+            method: 'DELETE',
+            url: `http://localhost:3000/posts/${id}`,
             timeout: 120000
         })
             .then((response) => {
                 dispatch({
-                    type: GET_PHOTOS_LIST,
+                    type: DELETE_POST,
                     payload: {
                         loading: false,
                         data: response.data,
@@ -31,7 +31,7 @@ export const GetPhotosList = (albumid) => {
             })
             .catch((error) => {
                 dispatch({
-                    type: GET_PHOTOS_LIST,
+                    type: DELETE_POST,
                     payload: {
                         loading: false,
                         data: false,
@@ -39,5 +39,7 @@ export const GetPhotosList = (albumid) => {
                     }
                 })
             })
+
     }
+
 }

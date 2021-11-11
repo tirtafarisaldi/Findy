@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_POSTS_LIST } from './types'
+import { GET_POSTS_LIST } from '../types'
 
 export const GetPostsList = (userid) => {
     return (dispatch) => {
