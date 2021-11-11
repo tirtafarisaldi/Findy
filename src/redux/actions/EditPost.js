@@ -1,27 +1,30 @@
 import axios from "axios";
-import { GET_PHOTOS_LIST } from '../types'
+import { EDIT_POST } from './types'
 
-export const GetPhotosList = (albumid) => {
+export const EditPost = (data) => {
     return (dispatch) => {
         //loading
         dispatch({
-            type: GET_PHOTOS_LIST,
+            type: EDIT_POST,
             payload: {
                 loading: true,
                 data: false,
                 errorMessage: false
             }
         })
+        console.log(data)
+
 
         //get API
         axios({
-            method: 'GET',
-            url: `http://localhost:3000/photos?albumId=${albumid}`,
-            timeout: 120000
+            method: 'PUT',
+            url: `http://localhost:3000/posts/${data.id}`,
+            timeout: 120000,
+            data: data
         })
             .then((response) => {
                 dispatch({
-                    type: GET_PHOTOS_LIST,
+                    type: EDIT_POST,
                     payload: {
                         loading: false,
                         data: response.data,
@@ -31,7 +34,7 @@ export const GetPhotosList = (albumid) => {
             })
             .catch((error) => {
                 dispatch({
-                    type: GET_PHOTOS_LIST,
+                    type: EDIT_POST,
                     payload: {
                         loading: false,
                         data: false,
@@ -39,5 +42,7 @@ export const GetPhotosList = (albumid) => {
                     }
                 })
             })
+
     }
+
 }

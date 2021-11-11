@@ -1,11 +1,11 @@
 import axios from "axios";
-import { GET_COMMENTS_LIST } from '../types'
+import { DELETE_COMMENT } from './types'
 
-export const GetCommentsList = (postid) => {
+export const DeleteComment = (id) => {
     return (dispatch) => {
         //loading
         dispatch({
-            type: GET_COMMENTS_LIST,
+            type: DELETE_COMMENT,
             payload: {
                 loading: true,
                 data: false,
@@ -15,13 +15,13 @@ export const GetCommentsList = (postid) => {
 
         //get API
         axios({
-            method: 'GET',
-            url: `http://localhost:3000/comments?postId=${postid}`,
+            method: 'DELETE',
+            url: `http://localhost:3000/comments/${id}`,
             timeout: 120000
         })
             .then((response) => {
                 dispatch({
-                    type: GET_COMMENTS_LIST,
+                    type: DELETE_COMMENT,
                     payload: {
                         loading: false,
                         data: response.data,
@@ -31,7 +31,7 @@ export const GetCommentsList = (postid) => {
             })
             .catch((error) => {
                 dispatch({
-                    type: GET_COMMENTS_LIST,
+                    type: DELETE_COMMENT,
                     payload: {
                         loading: false,
                         data: false,
@@ -39,5 +39,7 @@ export const GetCommentsList = (postid) => {
                     }
                 })
             })
+
     }
+
 }

@@ -1,10 +1,11 @@
 import axios from "axios";
-import { GET_DETAIL_PHOTO } from '../types'
+import { GET_COMMENTS_LIST } from './types'
 
-export const GetDetailPhoto = (photoid) => {
+export const GetCommentsList = (postid) => {
     return (dispatch) => {
+        //loading
         dispatch({
-            type: GET_DETAIL_PHOTO,
+            type: GET_COMMENTS_LIST,
             payload: {
                 loading: true,
                 data: false,
@@ -15,22 +16,22 @@ export const GetDetailPhoto = (photoid) => {
         //get API
         axios({
             method: 'GET',
-            url: `http://localhost:3000/photos/${photoid}`
+            url: `http://localhost:3000/comments?postId=${postid}`,
+            timeout: 120000
         })
             .then((response) => {
                 dispatch({
-                    type: GET_DETAIL_PHOTO,
+                    type: GET_COMMENTS_LIST,
                     payload: {
                         loading: false,
                         data: response.data,
                         errorMessage: false
                     }
                 })
-                console.log(response.data.url)
             })
             .catch((error) => {
                 dispatch({
-                    type: GET_DETAIL_PHOTO,
+                    type: GET_COMMENTS_LIST,
                     payload: {
                         loading: false,
                         data: false,
