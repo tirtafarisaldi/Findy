@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetDetailPhoto } from '../../redux/actions/GetDetailPhoto';
+import { GetDetailPhoto } from '../../redux/actions/photo/GetDetailPhoto';
 import { Link, useParams } from 'react-router-dom'
 
 const DetailPhoto = () => {

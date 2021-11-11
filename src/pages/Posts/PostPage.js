@@ -7,8 +7,6 @@ const PostPage = () => {
         <div>
             <div style={{ padding: "30px" }}>
                 <PostList />
-                <br />
-                <FormPost />
             </div>
         </div>
     )
