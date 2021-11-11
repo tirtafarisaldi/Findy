@@ -5,7 +5,8 @@ import { EditPost } from '../../redux/actions/post/EditPost';
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 
-const FormPost = () => {
+const FormPost = React.memo(() => {
+
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
     const [id, setId] = useState('')
@@ -51,6 +52,6 @@ const FormPost = () => {
             </Form>
         </div>
     )
-}
+})
 
 export { FormPost }

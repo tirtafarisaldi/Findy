@@ -5,7 +5,7 @@ import { GetPhotosList } from '../../redux/actions/photo/GetPhotosList';
 import { Link, useParams } from 'react-router-dom'
 import { Card, Button, Row, Container } from 'react-bootstrap'
 
-const PhotosList = () => {
+const PhotosList = React.memo(() => {
 
     const { GetPhotosListResult, 
             GetPhotosListLoading, 
@@ -50,6 +50,6 @@ const PhotosList = () => {
             </Row>
         </Container>
     )
-}
+})
 
 export { PhotosList }

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetDetailPhoto } from '../../redux/actions/photo/GetDetailPhoto';
 import { Link, useParams } from 'react-router-dom'
 
-const DetailPhoto = () => {
+const DetailPhoto = React.memo(() => {
 
     const { GetDetailPhotoResult, 
             GetDetailPhotoLoading, 
@@ -34,6 +34,6 @@ const DetailPhoto = () => {
             )}
         </div>
     )
-}
+})
 
 export { DetailPhoto }

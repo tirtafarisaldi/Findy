@@ -5,7 +5,7 @@ import { GetAlbumsList } from '../../redux/actions/album/GetAlbumsList';
 import { Link, useParams } from 'react-router-dom'
 import { Card, Button, Row } from 'react-bootstrap'
 
-const AlbumsList = () => {
+const AlbumsList = React.memo(() => {
     
     const { GetAlbumsListResult, 
             GetAlbumsListLoading, 
@@ -46,6 +46,6 @@ const AlbumsList = () => {
             )}
         </Row>
     )
-}
+})
 
 export { AlbumsList }

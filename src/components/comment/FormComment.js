@@ -1,11 +1,11 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CreateComment } from '../../redux/actions/comment/CreatComment';
 import { EditComment } from '../../redux/actions/comment/EditComment';
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 
-const FormComment = () => {
+const FormComment = React.memo(() => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [body, setBody] = useState('')
@@ -58,6 +58,6 @@ const FormComment = () => {
             </Form>
         </div>
     )
-}
+})
 
 export { FormComment }

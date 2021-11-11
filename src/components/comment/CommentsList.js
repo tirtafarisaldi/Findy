@@ -7,7 +7,7 @@ import { DetailComment } from '../../redux/actions/comment/DetailComment';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
-const CommentsList = () => {
+const CommentsList = React.memo(() => {
     const [postId, setPostId] = useState('')
 
     const { GetCommentsListResult, 
@@ -79,6 +79,6 @@ const CommentsList = () => {
         </ListGroup>
         </>
     )
-}
+})
 
 export { CommentsList }

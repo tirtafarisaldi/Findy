@@ -4,7 +4,7 @@ import { GetUsersList } from '../../redux/actions/user/GetUsersList';
 import { Link } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
-const UserList = () => {
+const UserList = React.memo(() => {
     
     const { GetUsersListResult, 
             GetUsersListLoading, 
@@ -40,6 +40,6 @@ const UserList = () => {
             )}
         </ListGroup>
     )
-}
+})
 
 export { UserList }

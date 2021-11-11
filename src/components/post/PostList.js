@@ -8,7 +8,7 @@ import { DetailPost } from '../../redux/actions/post/DetailPost';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
-const PostList = () => {
+const PostList = React.memo(() => {
 
     const[userId, setUserId] = useState('')
 
@@ -79,6 +79,6 @@ const PostList = () => {
             <FormPost/>
         </>
     )
-}
+})
 
 export { PostList }
