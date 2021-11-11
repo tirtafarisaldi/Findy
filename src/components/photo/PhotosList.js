@@ -1,12 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD:src/components/Photos/PhotosList.js
 import { GetAlbumsList } from '../../redux/actions/album/GetAlbumsList';
 import { GetPhotosList } from '../../redux/actions/photo/GetPhotosList';
-=======
-import { GetAlbumsList } from '../redux/actions/GetAlbumsList';
-import { GetPhotosList } from '../redux/actions/GetPhotosList';
->>>>>>> parent of d125edf (Folder Restructure):src/components/PhotosList.js
 import { Link, useParams } from 'react-router-dom'
 import { Card, Button, Row, Container } from 'react-bootstrap'
 

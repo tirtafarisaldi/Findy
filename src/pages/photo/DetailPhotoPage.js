@@ -1,7 +1,5 @@
 import React from 'react';
-import { DetailPhoto } from '../components/DetailPhoto';
-
-//Butuh komponen PhotosList
+import { DetailPhoto } from '../../components/photo/DetailPhoto';
 
 const DetailPhotoPage = () => {
     return (

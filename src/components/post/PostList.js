@@ -1,17 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD:src/components/Posts/PostList.js
-import { FormPost } from '../Posts/FormPost'
+import { FormPost } from '../../components/post/FormPost'
 import { GetUsersList } from '../../redux/actions/user/GetUsersList';
 import { GetPostsList } from '../../redux/actions/post/GetPostsList';
 import { DeletePost } from '../../redux/actions/post/DeletePost';
 import { DetailPost } from '../../redux/actions/post/DetailPost';
-=======
-import { GetUsersList } from '../redux/actions/GetUsersList';
-import { GetPostsList } from '../redux/actions/GetPostsList';
-import { DeletePost } from '../redux/actions/DeletePost';
-import { DetailPost } from '../redux/actions/DetailPost';
->>>>>>> parent of d125edf (Folder Restructure):src/components/PostList.js
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 

@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD:src/components/Comments/FormComment.js
 import { CreateComment } from '../../redux/actions/comment/CreatComment';
 import { EditComment } from '../../redux/actions/comment/EditComment';
-=======
-import { CreateComment } from '../redux/actions/CreatComment';
-import { EditComment } from '../redux/actions/EditComment';
->>>>>>> parent of d125edf (Folder Restructure):src/components/FormComment.js
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 

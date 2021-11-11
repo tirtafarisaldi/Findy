@@ -1,9 +1,9 @@
-import UserPage from './Pages/UserPage'
-import PostPage from './Pages/PostPage'
-import AlbumsPage from './Pages/AlbumsPage';
-import CommentsPage from './Pages/CommentsPage'
-import PhotosPage from './Pages/PhotosPage'
-import DetailPhotoPage from './Pages/DetailPhotoPage'
+import UserPage from '../src/pages/user/UserPage'
+import PostPage from '../src/pages/post/PostPage'
+import AlbumsPage from '../src/pages/album/AlbumsPage';
+import CommentsPage from '../src/pages/comment/CommentsPage'
+import PhotosPage from '../src/pages/photo/PhotosPage'
+import DetailPhotoPage from '../src/pages/photo/DetailPhotoPage'
 import {
   BrowserRouter as Router,
   Switch,

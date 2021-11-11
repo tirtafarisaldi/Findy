@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD:src/components/Posts/FormPost.js
 import { CreatePost } from '../../redux/actions/post/CreatePost';
 import { EditPost } from '../../redux/actions/post/EditPost';
-=======
-import { CreatePost } from '../redux/actions/CreatePost';
-import { EditPost } from '../redux/actions/EditPost';
->>>>>>> parent of d125edf (Folder Restructure):src/components/FormPost.js
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 

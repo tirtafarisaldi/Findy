@@ -1,7 +1,5 @@
 import React from 'react';
-import { PhotosList } from '../components/PhotosList';
-
-//Butuh komponen PhotosList
+import { PhotosList } from '../../components/photo/PhotosList';
 
 const PhotosPage = () => {
     return (

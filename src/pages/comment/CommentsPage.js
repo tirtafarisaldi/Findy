@@ -1,8 +1,5 @@
 import React from 'react';
-import { CommentsList } from '../components/CommentsList'
-import { FormComment } from '../components/FormComment';
-
-//Butuh komponen CommentList
+import { CommentsList } from '../../components/comment/CommentsList'
 
 const CommentsPage = () => {
     return (

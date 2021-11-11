@@ -1,7 +1,5 @@
 import React from 'react';
-import { UserList } from '../components/UserList'
-
-//Butuh komponen UserList
+import { UserList } from '../../components/user/UserList'
 
 const UserPage = () => {
 
