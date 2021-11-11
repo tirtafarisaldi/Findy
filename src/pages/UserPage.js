@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserList } from '../../components/Users/UserList'
+import { UserList } from '../components/UserList'
 
 //Butuh komponen UserList
 

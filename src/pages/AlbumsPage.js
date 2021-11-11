@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlbumsList } from '../../components/Albums/AlbumsList'
+import { AlbumsList } from '../components/AlbumsList'
 
 //Butuh Komponen PostList, AlbumList
 

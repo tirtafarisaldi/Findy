@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+<<<<<<< HEAD:src/components/Users/UserList.js
 import { GetUsersList } from '../../redux/actions/user/GetUsersList';
+=======
+import { GetUsersList } from '../redux/actions/GetUsersList';
+>>>>>>> parent of d125edf (Folder Restructure):src/components/UserList.js
 import { Link } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 

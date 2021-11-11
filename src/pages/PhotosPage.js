@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhotosList } from '../../components/Photos/PhotosList';
+import { PhotosList } from '../components/PhotosList';
 
 //Butuh komponen PhotosList
 

@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+<<<<<<< HEAD:src/components/Photos/DetailPhoto.js
 import { GetDetailPhoto } from '../../redux/actions/photo/GetDetailPhoto';
+=======
+import { GetDetailPhoto } from '../redux/actions/GetDetailPhoto';
+>>>>>>> parent of d125edf (Folder Restructure):src/components/DetailPhoto.js
 import { Link, useParams } from 'react-router-dom'
 
 const DetailPhoto = () => {

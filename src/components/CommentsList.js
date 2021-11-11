@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+<<<<<<< HEAD:src/components/Comments/CommentsList.js
 import { FormComment } from '../Comments/FormComment'
 import { GetPostsList } from '../../redux/actions/post/GetPostsList';
 import { GetCommentsList } from '../../redux/actions/comment/GetCommentsList';
 import { DeleteComment } from '../../redux/actions/comment/DeleteComment';
 import { DetailComment } from '../../redux/actions/comment/DetailComment';
+=======
+import { GetPostsList } from '../redux/actions/GetPostsList';
+import { GetCommentsList } from '../redux/actions/GetCommentsList';
+import { DeleteComment } from '../redux/actions/DeleteComment';
+import { DetailComment } from '../redux/actions/DetailComment';
+>>>>>>> parent of d125edf (Folder Restructure):src/components/CommentsList.js
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
