@@ -1,6 +1,6 @@
 import React from 'react';
-import { CommentsList } from '../components/CommentsList'
-import { FormComment } from '../components/FormComment';
+import { CommentsList } from '../../components/Comments/CommentsList'
+import { FormComment } from '../../components/Comments/FormComment';
 
 //Butuh komponen CommentList
 

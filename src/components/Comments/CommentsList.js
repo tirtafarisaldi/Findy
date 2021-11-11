@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetPostsList } from '../redux/actions/GetPostsList';
-import { GetCommentsList } from '../redux/actions/GetCommentsList';
-import { DeleteComment } from '../redux/actions/DeleteComment';
-import { DetailComment } from '../redux/actions/DetailComment';
+import { GetPostsList } from '../../redux/actions/GetPostsList';
+import { GetCommentsList } from '../../redux/actions/GetCommentsList';
+import { DeleteComment } from '../../redux/actions/DeleteComment';
+import { DetailComment } from '../../redux/actions/DetailComment';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 

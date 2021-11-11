@@ -1,5 +1,5 @@
 import React from 'react';
-import { DetailPhoto } from '../components/DetailPhoto';
+import { DetailPhoto } from '../../components/Photos/DetailPhoto';
 
 //Butuh komponen PhotosList
 

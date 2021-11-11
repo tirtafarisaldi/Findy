@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CreatePost } from '../redux/actions/CreatePost';
-import { EditPost } from '../redux/actions/EditPost';
+import { CreatePost } from '../../redux/actions/CreatePost';
+import { EditPost } from '../../redux/actions/EditPost';
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 

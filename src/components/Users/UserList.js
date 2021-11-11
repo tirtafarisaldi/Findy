@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetUsersList } from '../redux/actions/GetUsersList';
+import { GetUsersList } from '../../redux/actions/GetUsersList';
 import { Link } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CreateComment } from '../redux/actions/CreatComment';
-import { EditComment } from '../redux/actions/EditComment';
+import { CreateComment } from '../../redux/actions/CreatComment';
+import { EditComment } from '../../redux/actions/EditComment';
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 

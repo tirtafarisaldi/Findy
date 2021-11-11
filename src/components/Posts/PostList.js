@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetUsersList } from '../redux/actions/GetUsersList';
-import { GetPostsList } from '../redux/actions/GetPostsList';
-import { DeletePost } from '../redux/actions/DeletePost';
-import { DetailPost } from '../redux/actions/DetailPost';
+import { GetUsersList } from '../../redux/actions/GetUsersList';
+import { GetPostsList } from '../../redux/actions/GetPostsList';
+import { DeletePost } from '../../redux/actions/DeletePost';
+import { DetailPost } from '../../redux/actions/DetailPost';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
