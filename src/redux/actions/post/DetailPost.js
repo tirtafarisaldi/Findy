@@ -1,4 +1,4 @@
-import { DETAIL_POST } from './types'
+import { DETAIL_POST } from '../types'
 
 export const DetailPost = (data) => {
     return (dispatch) => {

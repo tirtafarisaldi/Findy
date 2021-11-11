@@ -1,4 +1,4 @@
-import { DETAIL_COMMENT } from './types'
+import { DETAIL_COMMENT } from '../types'
 
 export const DetailComment = (data) => {
     return (dispatch) => {

@@ -1,28 +1,30 @@
 import axios from "axios";
-import { CREATE_COMMENT } from './types'
+import { EDIT_POST } from '../types'
 
-export const CreateComment = (userid, data) => {
+export const EditPost = (data) => {
     return (dispatch) => {
         //loading
         dispatch({
-            type: CREATE_COMMENT,
+            type: EDIT_POST,
             payload: {
                 loading: true,
                 data: false,
                 errorMessage: false
             }
         })
+        console.log(data)
+
 
         //get API
         axios({
-            method: 'POST',
-            url: `http://localhost:3000/comments`,
+            method: 'PUT',
+            url: `http://localhost:3000/posts/${data.id}`,
             timeout: 120000,
             data: data
         })
             .then((response) => {
                 dispatch({
-                    type: CREATE_COMMENT,
+                    type: EDIT_POST,
                     payload: {
                         loading: false,
                         data: response.data,
@@ -32,7 +34,7 @@ export const CreateComment = (userid, data) => {
             })
             .catch((error) => {
                 dispatch({
-                    type: CREATE_COMMENT,
+                    type: EDIT_POST,
                     payload: {
                         loading: false,
                         data: false,
