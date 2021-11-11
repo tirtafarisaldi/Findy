@@ -6,8 +6,17 @@ import { Link, useParams } from 'react-router-dom'
 import { Card, Button, Row } from 'react-bootstrap'
 
 const AlbumsList = () => {
-    const { GetAlbumsListResult, GetAlbumsListLoading, GetAlbumsListError } = useSelector((state) => state.Album)
-    const { GetUsersListResult, GetUsersListLoading, GetUsersListError } = useSelector((state) => state.User)
+    
+    const { GetAlbumsListResult, 
+            GetAlbumsListLoading, 
+            GetAlbumsListError 
+        } = useSelector((state) => state.Album)
+
+    const { GetUsersListResult, 
+            GetUsersListLoading, 
+            GetUsersListError 
+        } = useSelector((state) => state.User)
+        
     const dispatch = useDispatch()
     const params = useParams()
 

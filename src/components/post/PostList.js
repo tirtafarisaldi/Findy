@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormPost } from '../../components/post/FormPost'
 import { GetUsersList } from '../../redux/actions/user/GetUsersList';
@@ -8,33 +8,47 @@ import { DetailPost } from '../../redux/actions/post/DetailPost';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
-function PostList() {
+const PostList = () => {
+
+    const[userId, setUserId] = useState('')
+
     const { GetPostsListResult, 
             GetPostsListLoading, 
             GetPostsListError,
             DeletePostResult,
             EditPostResult 
         } = useSelector((state) => state.Post)
-    const { GetUsersListResult, GetUsersListLoading, GetUsersListError } = useSelector((state) => state.User)
+        
+    const { GetUsersListResult, 
+            GetUsersListLoading, 
+            GetUsersListError 
+        } = useSelector((state) => state.User)
+
     const dispatch = useDispatch();
     const params = useParams()
+    
+    useEffect(()=>{
+        for(let i = 0; i < GetUsersListResult.length; i++ ) {
+            if(GetUsersListResult[i]?.id == params.postid) {
+                setUserId(i)
+            }
+        }
+    },[GetUsersListResult])
 
     useEffect(() => {
         dispatch(GetUsersList())
         dispatch(GetPostsList(params.userid))
-        console.log(EditPostResult)
     }, [DeletePostResult,dispatch])
 
     useEffect(() => {
         dispatch(GetUsersList())
         dispatch(GetPostsList(params.userid))
-        console.log(EditPostResult)
     }, [EditPostResult,dispatch])
 
     return (
         <>
             <ListGroup>
-                <h1>{GetUsersListResult[params.userid - 1]?.name}'s Posts</h1>
+                <h1>{GetUsersListResult[userId]?.name}'s Posts</h1>
                 <hr />
                 {GetPostsListResult ? (
                     GetPostsListResult.map(post => {

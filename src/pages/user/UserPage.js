@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserList } from '../../components/user/UserList'
 
-const UserPage = () => {
+function UserPage (){
 
     return (
         <div style={{ padding: "30px" }}>

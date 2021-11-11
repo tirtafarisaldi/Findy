@@ -4,7 +4,12 @@ import { GetDetailPhoto } from '../../redux/actions/photo/GetDetailPhoto';
 import { Link, useParams } from 'react-router-dom'
 
 const DetailPhoto = () => {
-    const { GetDetailPhotoResult, GetDetailPhotoLoading, GetDetailPhotoError } = useSelector((state) => state.Photo)
+
+    const { GetDetailPhotoResult, 
+            GetDetailPhotoLoading, 
+            GetDetailPhotoError 
+        } = useSelector((state) => state.Photo)
+        
     const dispatch = useDispatch();
     const params = useParams();
 

@@ -4,8 +4,13 @@ import { GetUsersList } from '../../redux/actions/user/GetUsersList';
 import { Link } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
-function UserList() {
-    const { GetUsersListResult, GetUsersListLoading, GetUsersListError } = useSelector((state) => state.User)
+const UserList = () => {
+    
+    const { GetUsersListResult, 
+            GetUsersListLoading, 
+            GetUsersListError 
+        } = useSelector((state) => state.User)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,7 +25,7 @@ function UserList() {
                         <ListGroup.Item>
                             <h5 key={user.id}>{user.name} (@{user.username})</h5>
                             <br />
-                            <p class="blockquote-footer">{user.email}</p>
+                            <p className="blockquote-footer">{user.email}</p>
                             <Link to={`/PostsList/${user.id}`}><Button variant="outline-primary">View Posts User</Button></Link>
                             {" "}
                             <Link to={`/AlbumsList/${user.id}`}><Button variant="outline-success">View Albums User</Button></Link>

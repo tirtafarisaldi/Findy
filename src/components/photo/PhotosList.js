@@ -6,8 +6,17 @@ import { Link, useParams } from 'react-router-dom'
 import { Card, Button, Row, Container } from 'react-bootstrap'
 
 const PhotosList = () => {
-    const { GetPhotosListResult, GetPhotosListLoading, GetPhotosListError } = useSelector((state) => state.Photo)
-    const { GetAlbumsListResult, GetAlbumsListLoading, GetAlbumsListError } = useSelector((state) => state.Album)
+
+    const { GetPhotosListResult, 
+            GetPhotosListLoading, 
+            GetPhotosListError 
+        } = useSelector((state) => state.Photo)
+
+    const { GetAlbumsListResult, 
+            GetAlbumsListLoading, 
+            GetAlbumsListError 
+        } = useSelector((state) => state.Album)
+
     const dispatch = useDispatch();
     const params = useParams();
 
@@ -15,7 +24,7 @@ const PhotosList = () => {
         dispatch(GetAlbumsList(params.userid))
         dispatch(GetPhotosList(params.albumid))
     }, [dispatch])
-    console.log(GetAlbumsListResult)
+    
     return (
         <Container>
             <Row>

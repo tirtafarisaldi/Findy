@@ -1,10 +1,13 @@
 import React from 'react';
 import { CommentsList } from '../../components/comment/CommentsList'
+import { FormComment } from '../../components/comment/FormComment'
 
-const CommentsPage = () => {
+function CommentsPage() {
     return (
         <div style={{ padding: "30px" }}>
             <CommentsList />
+            <br/>
+            <FormComment/>
         </div>
     )
 }

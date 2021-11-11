@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AlbumsList } from '../../components/album/AlbumsList'
 
-//Butuh Komponen PostList, AlbumList
-
-const AlbumsPage = () => {
+function AlbumsPage() {
     return (
         <div style={{ padding: "30px" }}>
-            <AlbumsList />
+            <AlbumsList/>
         </div>
     )
 }

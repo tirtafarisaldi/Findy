@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FormComment } from '../comment/FormComment'
 import { GetPostsList } from '../../redux/actions/post/GetPostsList';
 import { GetCommentsList } from '../../redux/actions/comment/GetCommentsList';
 import { DeleteComment } from '../../redux/actions/comment/DeleteComment';
@@ -8,8 +7,8 @@ import { DetailComment } from '../../redux/actions/comment/DetailComment';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 
-function CommentsList() {
-    const [id, setId] = useState(0)
+const CommentsList = () => {
+    const [postId, setPostId] = useState('')
 
     const { GetCommentsListResult, 
             GetCommentsListLoading, 
@@ -24,16 +23,10 @@ function CommentsList() {
     const dispatch = useDispatch();
     const params = useParams();
 
-    // const Post = GetPostsListResult.map((post, i)=>{
-    //     if(i === params.userid ) {
-    //         setId(i)
-    //     }
-    // })  
-
     useEffect(()=>{
         for(let i = 0; i < GetPostsListResult.length; i++ ) {
             if(GetPostsListResult[i]?.id == params.postid) {
-                setId(i)
+                setPostId(i)
             }
         }
     },[GetPostsListResult])
@@ -53,13 +46,11 @@ function CommentsList() {
         dispatch(GetCommentsList(params.postid))
     }, [EditCommentResult,dispatch])
 
-    console.log(id)
-
     return (
         <>
         <ListGroup>
-            <h1>{GetPostsListResult[id]?.title}</h1>
-            <p>{GetPostsListResult[id]?.body}</p>
+            <h1>{GetPostsListResult[postId]?.title}</h1>
+            <p>{GetPostsListResult[postId]?.body}</p>
             <hr />
             {GetCommentsListResult ? (
                 GetCommentsListResult.map(comment => {
@@ -67,7 +58,7 @@ function CommentsList() {
                         <ListGroup.Item key={comment.id}>
                             <h6>{comment.name}</h6>
                             <br />
-                            <p class="blockquote-footer">{comment.email}</p>
+                            <p className="blockquote-footer">{comment.email}</p>
                             <p>{comment.body}</p>
                             <Button variant="outline-primary" type="button" onClick={() => dispatch(DetailComment(comment))}>Edit</Button>{" "}
                             <Button variant="outline-success" type="button" onClick={() => {
@@ -75,8 +66,6 @@ function CommentsList() {
                                     dispatch(DeleteComment(comment.id))
                                 )
                             }}>Delete</Button>
-                            {/* <Link to={`/Post/${user.id}`} className="ui blue inverted button">View Posts User</Link>
-                            <Link to={`/Album/${user.id}`} className="ui violet inverted button">View Albums User</Link> */}
                             <hr />
                         </ListGroup.Item>
 
@@ -88,8 +77,6 @@ function CommentsList() {
                 <p>{GetCommentsListError ? GetCommentsListError : "Data Kosong"}</p>
             )}
         </ListGroup>
-        <br/>
-        <FormComment/>
         </>
     )
 }
