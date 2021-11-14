@@ -1,16 +1,17 @@
-import UserPage from './app/user/UserPage'
-import PostPage from './app/post/PostPage'
-import AlbumsPage from '../src/app/album/AlbumsPage';
-import CommentsPage from './app/comment/CommentsPage'
-import PhotosPage from './app/photo/PhotosPage'
-import DetailPhotoPage from './app/photo/DetailPhotoPage'
+import React from 'react';
+import UserPage from '../user/UserPage'
+import PostPage from '../post/PostPage'
+import AlbumsPage from '../album/AlbumsPage'
+import CommentsPage from '../comment/CommentsPage'
+import PhotosPage from '../photo/PhotosPage'
+import DetailPhotoPage from '../photo/DetailPhotoPage'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
-function App() {
+const Routes = React.memo(() => {
   return (
     <Router>
       <Switch>
@@ -24,6 +25,6 @@ function App() {
     </Router>
 
   );
-}
+})
 
-export default App;
+export {Routes}
