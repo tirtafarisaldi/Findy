@@ -1,0 +1,63 @@
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { CreateComment } from '../../redux/actions/comment/CreatComment';
+import { EditComment } from '../../redux/actions/comment/EditComment';
+import { Link, useParams, useHistory } from 'react-router-dom'
+import { Form, Button } from 'react-bootstrap'
+
+const FormComment = React.memo(() => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [body, setBody] = useState('')
+    const [commentId, setCommentId] = useState('')
+
+    const params = useParams();
+    const dispatch = useDispatch();
+
+    const { DetailCommentResult } = useSelector(state => state.Comment)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (commentId) {
+            dispatch(EditComment({ postId: parseInt(`${params.postid}`), id: setCommentId, name: name, email: email, body: body }))
+        } else {
+            dispatch(CreateComment(params.userid, { postId: parseInt(`${params.postid}`), name: name, email: email, body: body }))
+        }
+        window.location.reload(true)
+    }
+
+    useEffect(() => {
+        if (DetailCommentResult) {
+            setName(DetailCommentResult.name)
+            setEmail(DetailCommentResult.email)
+            setBody(DetailCommentResult.body)
+            setCommentId(DetailCommentResult.id)
+        }
+    }, [DetailCommentResult])
+
+    console.log("Form re render")
+
+    return (
+        <div>
+            <h4> Add and Edit Comment Here!</h4>
+            <Form onSubmit={(e) => handleSubmit(e)} >
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" name="name" placeholder="masukkan name..." value={name}
+                    onChange={(e) => setName(e.target.value)} />
+                <br />
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="text" name="email" placeholder="masukkan email..." value={email}
+                    onChange={(e) => setEmail(e.target.value)} />
+                <br />
+                <Form.Label>Body</Form.Label>
+                <Form.Control type="text" name="body" placeholder="masukkan body..." value={body}
+                    onChange={(e) => setBody(e.target.value)} />
+                <br />
+                <Button variant="outline-primary" type="submit">Submit</Button>
+            </Form>
+        </div>
+    )
+})
+
+export { FormComment }
