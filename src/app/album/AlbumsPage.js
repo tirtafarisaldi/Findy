@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AlbumsList } from './components/AlbumsList'
+import { Layout } from '../layout/Layout'
 
 function AlbumsPage() {
     return (
-        <div style={{ padding: "30px" }}>
+        <Layout>
             <AlbumsList/>
-        </div>
+        </Layout>
     )
 }
 

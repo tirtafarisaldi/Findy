@@ -1,14 +1,15 @@
 import React from 'react';
 import { UserList } from './components/UserList'
+import { Layout } from '../layout/Layout'
 
 function UserPage (){
 
     return (
-        <div style={{ padding: "30px" }}>
+        <Layout>
             <h1>User List</h1>
             <hr />
             <UserList />
-        </div>
+        </Layout>
     )
 }
 

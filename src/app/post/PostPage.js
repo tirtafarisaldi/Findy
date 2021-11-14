@@ -1,16 +1,15 @@
 import React from 'react';
 import { PostList } from './components/PostList'
 import { FormPost } from '../form/FormPost'
+import { Layout } from '../layout/Layout'
 
 function PostPage () {
     return (
-        <div>
-            <div style={{ padding: "30px" }}>
+            <Layout>
                 <PostList />
                 <br/>
                 <FormPost/>
-            </div>
-        </div>
+            </Layout>
     )
 }
 

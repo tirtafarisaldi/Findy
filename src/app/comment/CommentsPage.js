@@ -1,14 +1,15 @@
 import React from 'react';
 import { CommentsList } from './components/CommentsList'
 import { FormComment } from '../form/FormComment'
+import { Layout } from '../layout/Layout'
 
 function CommentsPage() {
     return (
-        <div style={{ padding: "30px" }}>
+        <Layout>
             <CommentsList />
             <br/>
             <FormComment/>
-        </div>
+        </Layout>
     )
 }
 

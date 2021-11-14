@@ -1,11 +1,12 @@
 import React from 'react';
 import { PhotosList } from './components/PhotosList';
+import { Layout } from '../layout/Layout'
 
 function PhotosPage () {
     return (
-        <div style={{ padding: "30px" }}>
+        <Layout>
             <PhotosList />
-        </div>
+        </Layout>
     )
 }
 
