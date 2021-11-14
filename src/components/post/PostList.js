@@ -75,8 +75,6 @@ const PostList = React.memo(() => {
                     <p>{GetPostsListError ? GetPostsListError : "Data Kosong"}</p>
                 )}
             </ListGroup>
-            <br/>
-            <FormPost/>
         </>
     )
 })
