@@ -1,5 +1,5 @@
 import React from 'react';
-import { DetailPhoto } from '../../components/photo/DetailPhoto';
+import { DetailPhoto } from './components/DetailPhoto';
 
 function DetailPhotoPage () {
     return (

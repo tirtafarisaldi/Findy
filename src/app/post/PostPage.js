@@ -1,6 +1,6 @@
 import React from 'react';
-import { PostList } from '../../components/post/PostList'
-import { FormPost } from '../../components/post/FormPost'
+import { PostList } from './components/PostList'
+import { FormPost } from '../form/FormPost'
 
 function PostPage () {
     return (

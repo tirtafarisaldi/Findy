@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlbumsList } from '../../components/album/AlbumsList'
+import { AlbumsList } from './components/AlbumsList'
 
 function AlbumsPage() {
     return (

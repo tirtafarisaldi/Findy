@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FormPost } from '../../components/post/FormPost'
-import { GetUsersList } from '../../redux/actions/user/GetUsersList';
-import { GetPostsList } from '../../redux/actions/post/GetPostsList';
-import { DeletePost } from '../../redux/actions/post/DeletePost';
-import { DetailPost } from '../../redux/actions/post/DetailPost';
+import { GetUsersList } from '../../../redux/actions/user/GetUsersList';
+import { GetPostsList } from '../../../redux/actions/post/GetPostsList';
+import { DeletePost } from '../../../redux/actions/post/DeletePost';
+import { DetailPost } from '../../../redux/actions/post/DetailPost';
 import { Link, useParams } from 'react-router-dom'
 import { ListGroup, Button } from 'react-bootstrap'
 

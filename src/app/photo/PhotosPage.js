@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhotosList } from '../../components/photo/PhotosList';
+import { PhotosList } from './components/PhotosList';
 
 function PhotosPage () {
     return (

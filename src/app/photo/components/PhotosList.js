@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetAlbumsList } from '../../redux/actions/album/GetAlbumsList';
-import { GetPhotosList } from '../../redux/actions/photo/GetPhotosList';
+import { GetAlbumsList } from '../../../redux/actions/album/GetAlbumsList';
+import { GetPhotosList } from '../../../redux/actions/photo/GetPhotosList';
 import { Link, useParams } from 'react-router-dom'
 import { Card, Button, Row, Container } from 'react-bootstrap'
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { CommentsList } from '../../components/comment/CommentsList'
-import { FormComment } from '../../components/comment/FormComment'
+import { CommentsList } from './components/CommentsList'
+import { FormComment } from '../form/FormComment'
 
 function CommentsPage() {
     return (
