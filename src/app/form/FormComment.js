@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CreateComment } from '../../redux/actions/comment/CreatComment';
 import { EditComment } from '../../redux/actions/comment/EditComment';
-import { Link, useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 
 const FormComment = React.memo(() => {
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [body, setBody] = useState('')
@@ -16,7 +17,7 @@ const FormComment = React.memo(() => {
 
     const { DetailCommentResult } = useSelector(state => state.Comment)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = useCallback((e) => {
         e.preventDefault();
 
         if (commentId) {
@@ -24,8 +25,7 @@ const FormComment = React.memo(() => {
         } else {
             dispatch(CreateComment(params.userid, { postId: parseInt(`${params.postid}`), name: name, email: email, body: body }))
         }
-        window.location.reload(true)
-    }
+    }, [commentId])
 
     useEffect(() => {
         if (DetailCommentResult) {
@@ -35,8 +35,6 @@ const FormComment = React.memo(() => {
             setCommentId(DetailCommentResult.id)
         }
     }, [DetailCommentResult])
-
-    console.log("Form re render")
 
     return (
         <div>

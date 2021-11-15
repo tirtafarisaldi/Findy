@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CreatePost } from '../../redux/actions/post/CreatePost';
 import { EditPost } from '../../redux/actions/post/EditPost';
-import { Link, useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 
 const FormPost = React.memo(() => {
@@ -15,7 +15,8 @@ const FormPost = React.memo(() => {
     const dispatch = useDispatch();
 
     const { DetailPostResult } = useSelector(state => state.Post)
-    const handleSubmit = (e) => {
+
+    const handleSubmit = useCallback((e) => {
         e.preventDefault();
         if (id) {
             dispatch(EditPost({ id: id, title: title, body: body, userId: parseInt(`${params.userid}`) }))
@@ -23,7 +24,7 @@ const FormPost = React.memo(() => {
         } else {
             dispatch(CreatePost(params.userid, { userId: parseInt(`${params.userid}`), title: title, body: body }))
         }
-    }
+    },[id])
 
     useEffect(() => {
         if (DetailPostResult) {
