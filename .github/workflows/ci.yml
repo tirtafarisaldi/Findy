@@ -1,5 +1,10 @@
 name: CI
 
+# on: 
+#   push:
+#     branches:    
+#       - master 
+
 on: [push, pull_request]
 
 jobs:
@@ -7,10 +12,26 @@ jobs:
 
     runs-on: ubuntu-latest
     
+    strategy:
+      matrix:
+        node-version: [10.x, 8.x]
+    
     steps:
     - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    
     - name: install
-      run: yarn
+      run: |
+        yarn install
+    - name: test
+      run: |
+        yarn test 
+      env:
+        CI: true
+      
     - name: build
-      run: yarn build
-   
+      run: |
+        yarn run build --if-present
