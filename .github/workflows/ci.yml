@@ -5,7 +5,7 @@ name: CI
 #     branches:    
 #       - master 
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
